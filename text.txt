@@ -1,6 +1,3 @@
-Annually
-Monthly
-
 Basic
 &dollar;19.99
 &dollar;199.99

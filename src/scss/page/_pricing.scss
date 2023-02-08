@@ -1,0 +1,53 @@
+@use '../utils/colors' as c;
+
+.pricing {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    color: c.$Grayish-Blue;
+    margin-bottom: 2.5rem;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-bottom: 4rem;
+
+    &-text {
+      color: c.$Light-Grayish-Blue;
+      font-size: .938rem;
+    }
+
+    &-btn {
+      position: relative;
+      height: 33px;
+      width: 60px;
+
+      &_input {
+        display: none;
+      }
+
+      &_slider {
+        background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        border-radius: 2rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          background-color: hsl(0, 0%, 100%);
+          width: 25px;
+          height: 25px;
+          bottom: 4px;
+          left: 5px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
