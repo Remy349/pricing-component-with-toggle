@@ -4,7 +4,7 @@ import Toggle from './components/Toggle'
 
 function App () {
   return (
-    <main className='pricing container'>
+    <main className='pricing'>
       <h1 className='pricing__title'>Our Pricing</h1>
       <Toggle />
       <Pricing />

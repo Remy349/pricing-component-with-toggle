@@ -14,8 +14,10 @@ body {
   color: c.$Dark-Grayish-Blue;
 }
 
-.container {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  max-width: 768px;
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
