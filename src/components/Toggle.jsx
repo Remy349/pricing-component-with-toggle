@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import PricingContext from '../context/Pricing/PricingContext'
 
 const Toggle = () => {
+  const { toggleClick, isClicked } = useContext(PricingContext)
+
   return (
     <div className='pricing__toggle'>
       <span className='pricing__toggle-text'>Annually</span>
@@ -9,8 +12,10 @@ const Toggle = () => {
           className='pricing__toggle-btn_input'
           type='checkbox'
           id='checkbox'
+          checked={isClicked}
+          onChange={() => toggleClick()}
         />
-        <span className='pricing__toggle-btn_slider pricing__toggle-btn_round' />
+        <span className='pricing__toggle-btn_slider' />
       </label>
       <span className='pricing__toggle-text'>Monthly</span>
     </div>

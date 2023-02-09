@@ -46,7 +46,12 @@
           bottom: 4px;
           left: 5px;
           border-radius: 50%;
+          transition: .3s;
         }
+      }
+
+      &_input:checked + &_slider::before {
+        transform: translateX(25px);
       }
     }
   }
