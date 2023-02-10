@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import PricingContext from '../context/Pricing/PricingContext'
 
-const PricingCard = () => {
+const PricingCard = ({ type, price, data }) => {
+  const { isClicked } = useContext(PricingContext)
+
   return (
-    <article className='pricing__card basic'>
-      <h2 className='pricing__card-type'>Basic</h2>
-      <h3 className='pricing__card-price'>$199.99</h3>
-      <ul className='pricing__card-list'>
-        <li className='pricing__card-item'>500 GB Storage</li>
-        <li className='pricing__card-item'>2 Users Allowed</li>
-        <li className='pricing__card-item'>Send up to 3 GB</li>
+    <article className={`pricing__card ${type}`}>
+      <h2 className={`pricing__card-type ${type}`}>{type}</h2>
+      <h3 className={`pricing__card-price ${type}`}>
+        {!isClicked ? price.annually : price.monthly}
+      </h3>
+      <ul className={`pricing__card-list ${type}`}>
+        <li>{data.storage} Storage</li>
+        <li>{data.users} Users Allowed</li>
+        <li>Send up to {data.send} GB</li>
       </ul>
-      <a href='#' className='pricing__card-more basic'>
+      <a href='#' className={`pricing__card-more ${type}`}>
         Learn More
       </a>
     </article>

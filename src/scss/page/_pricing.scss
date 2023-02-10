@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 4rem 0 5rem;
 
   &__title {
     color: c.$Grayish-Blue;
@@ -37,6 +38,10 @@
         inset: 0;
         border-radius: 2rem;
 
+        &:hover {
+          background: c.$Light-Grayish-Blue;
+        }
+
         &::before {
           content: '';
           position: absolute;
@@ -46,7 +51,7 @@
           bottom: 4px;
           left: 5px;
           border-radius: 50%;
-          transition: .3s;
+          transition: all .3s;
         }
       }
 
@@ -54,6 +59,12 @@
         transform: translateX(25px);
       }
     }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
   }
 
   &__card {
@@ -66,31 +77,70 @@
     width: 20rem;
     font-size: .938rem;
 
-    &.basic {
+    &.basic,
+    &.master {
       background-color: hsl(0, 0%, 100%);
+    }
+
+    &.professional {
+      background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
     }
 
     &-type {
       font-size: 1.2rem;
-      color: c.$Grayish-Blue;
+      text-transform: capitalize;
+
+      &.basic,
+      &.master {
+        color: c.$Grayish-Blue;
+      }
+
+      &.professional {
+        color: hsl(0, 0%, 100%);
+      }
     }
 
     &-price {
       font-size: 4rem;
       margin: 1.5rem 0;
+
+      &.basic,
+      &.master {
+        color: c.$Dark-Grayish-Blue;
+      }
+
+      &.professional {
+        color: hsl(0, 0%, 100%);
+      }
     }
 
     &-list {
       margin-bottom: 2rem;
-      color: c.$Grayish-Blue;
       width: 100%;
       text-align: center;
-      border-top: 1px solid c.$Light-Grayish-Blue;
-    }
 
-    &-item {
-      border-bottom: 1px solid c.$Light-Grayish-Blue;
-      padding: 1rem 0;
+      & li {
+        padding: 1rem 0;
+      }
+
+      &.basic,
+      &.master {
+        color: c.$Grayish-Blue;
+        border-top: 1px solid c.$Light-Grayish-Blue;
+
+        & li {
+          border-bottom: 1px solid c.$Light-Grayish-Blue;
+        }
+      }
+
+      &.professional {
+        color: hsl(0, 0%, 100%);
+        border-top: 1px solid hsl(0, 0%, 100%);
+
+        & li {
+          border-bottom: 1px solid hsl(0, 0%, 100%);
+        }
+      }
     }
 
     &-more {
@@ -103,7 +153,8 @@
       cursor: pointer;
       transition: all .3s;
 
-      &.basic {
+      &.basic,
+      &.master {
         background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
         color: hsl(0, 0%, 100%);
 
@@ -111,6 +162,17 @@
           background: hsl(0, 0%, 100%);
           color: hsl(237, 63%, 64%);
           border: 1px solid hsl(237, 63%, 64%);
+        }
+      }
+
+      &.professional {
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(237, 63%, 64%);
+        border: 1px solid hsl(0, 0%, 100%);
+
+        &:hover {
+          background-color: transparent;
+          color: hsl(0, 0%, 100%);
         }
       }
     }
