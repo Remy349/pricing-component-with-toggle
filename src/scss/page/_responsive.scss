@@ -1,0 +1,76 @@
+// WIDTH
+
+@media screen and (max-width: 340px) {
+  .pricing {
+    &__toggle {
+      column-gap: 1rem;
+    }
+
+    &__card {
+      width: 17rem;
+
+      &-price {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .pricing {
+    &__toggle {
+      column-gap: .75rem;
+    }
+
+    &__card {
+      width: 15rem;
+
+      &-price {
+        font-size: 2.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    &::before {
+      background: url(/src/images/bg-top.svg) top 0 right 0,
+        url(/src/images/bg-bottom.svg) bottom 0 left 0;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .pricing {
+    &__cards {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__card {
+      &.basic {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &.master {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &.professional {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+        box-shadow: 0;
+      }
+    }
+  }
+}
+
+// HEIGHT
+
+@media screen and (min-height: 700px) {
+  .pricing {
+    padding: 0;
+  }
+}
